@@ -1,0 +1,19 @@
+#page1{
+    min-height: 50vh;
+    width: 100%;
+    color: black;
+    background-color: white;
+    font-family: "Freight big pro";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4.2vw;
+    line-height: 3.5vw;
+    font-size: 100;
+}
+
+#page2{
+    min-height:100vh ;
+    width: 100%;
+}

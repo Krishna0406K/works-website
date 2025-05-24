@@ -1,0 +1,132 @@
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+#page1 video{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#page2{
+    padding-top: 50px;
+    min-height: 50vh;
+    width: 100%;
+    background-color: rgb(225, 206, 0);
+    color:black
+}
+
+#about-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+  flex-wrap:wrap;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+#left, #middle, #right {
+  flex: 1 1 0; 
+  min-width: 250px;
+}
+
+#left{
+    flex: 1 1 0;
+}
+
+#middle{
+    flex: 1 1 0;
+}
+
+#right{
+    flex: 2 1 0;
+}
+
+
+@media (max-width: 768px) {
+  #left, #middle, #right {
+    flex: 1 1 100%; 
+  }
+}
+
+#left #left-top time, span{
+    font-family: 'helvetica neue', helvetica, sans-serif;
+    padding: 5px;
+    font-weight : 600;
+};
+
+#left #left-middle {
+    margin-top: 50px;
+}
+
+ #left #left-middle span{  
+    font-size: 2rem;
+    font-family: 'helvetica neue', helvetica, sans-serif;
+}
+
+#left #left-middle p{
+    font-family: sans-serif;
+    font-size: 1.1em;
+    padding: 5px
+};
+
+#left #left-bottom {
+    margin-top: 50px;
+}
+
+#left #left-bottom h1{
+    margin-top: 50px;
+    font-size: 2rem;
+    font-family: 'helvetica neue', helvetica, sans-serif;
+    font-weight: 600;
+}
+
+#left #left-bottom a{
+    font-family: sans-serif;
+    font-size: 1.1em;
+    padding: 5px
+};
+
+
+#middle #middle-top a{
+   font-family: sans-serif;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+#middle #middle-bottom{
+    margin-top: 50px;
+}
+
+#middle #middle-bottom span{
+    font-size: 2rem;
+    font-family: 'helvetica neue', helvetica, sans-serif;
+    font-weight: 600;
+}
+
+#middle #middle-bottom p{
+    font-family: sans-serif;
+    font-size: 1.1em;
+    padding: 5px
+};
+
+#right{
+    margin-top: 50px;
+}
+
+#right p{
+     font-family: "Freight big pro";
+    font-size: 2.3em;
+    padding: 5px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+
