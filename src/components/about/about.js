@@ -6,14 +6,13 @@ import aboutvid from '../../assets/about page/ZN0WL59VSaG2rlYPK40e2w-works_2024_
 function About() {
   return (
     <div>
-      <div id='page1'>
+      <div id='about-page1'>
         <video src={aboutvid} autoPlay loop muted />
       </div>
-      <div id='page2'>
+      <div id='about-page2'>
         <div id='about-content'>
           <div id='left'>
             <div id='left-top'>
-              <time dateTime='6:18'>6:18AM</time>
               <span>New York City</span>
             </div>
             <div id='left-middle'>

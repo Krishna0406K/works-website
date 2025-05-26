@@ -25,13 +25,19 @@ function Front() {
             delay: 0.7,
             duration: 2,
             ease: "expo.out",
+            onComplete:() =>{
+                const loader = document.querySelector('#loader');
+                if(loader){
+                    loader.style.display = 'none';
+                }
+            }
         })
     })
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
-      el: document.querySelector("#loader"),
-      smooth: true,
+      el: document.querySelector('#front-page1'),
+      smooth: true, 
       lerp: 1,
     });
 
@@ -42,11 +48,14 @@ function Front() {
 
   useEffect(() => {
     const elems = document.querySelectorAll('.elem');
-    const page2 = document.querySelector('#page2');
+    const page2 = document.querySelector('#front-page2');
+    if (!page2) return;
     elems.forEach((elem) => {
       elem.addEventListener('mouseenter', function() {
        const img = this.getAttribute('data-img');
-       page2.style.backgroundImage = `url(${img})`;
+       if (page2) {
+         page2.style.backgroundImage = `url(${img})`;
+       }
       });
     });
     return () => {
@@ -61,12 +70,12 @@ function Front() {
       <div id='loader'>
               <h1><em>Reflect. Express. Empower.</em></h1>
           </div>
-      <div id='main'>   
-          <div id='page1' className='bg-[rgb(245, 227, 26)]' data-scroll data-scroll-speed ="-2.5">
+      <div id='main' data-scroll-container>   
+          <div id='front-page1' data-scroll data-scroll-speed ="2">
               <h1>CREATIVE <em>PROFESSIONALS<br /></em> DEDICATED <em>to</em> CULTURAL<br />
                   ADVANCEMENT <em>through<br /></em> STRATEGY <em>and</em> DESIGN.</h1>
           </div>
-          <div id='page2' data-scroll data-scroll-speed ="2">
+          <div id='front-page2' data-scroll data-scroll-speed ="-1">
               <div className='elem' data-img={pic1} loading ="lazy">
                     <h2>Converse</h2>
                   <div className='moving'>
@@ -238,7 +247,7 @@ function Front() {
                   </div>
               </div>
           </div>
-          <div id='page3' data-scroll>
+          <div id='front-page3' data-scroll>
             <div className='image-container'>
                 <div className='image-div'>
                     <div className='overlay'>

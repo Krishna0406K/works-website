@@ -1,5 +1,5 @@
-#page4{
-    height: 80vh;
+#tagline-page{
+    height: 50vh;
     width: 100%;
     color: black;
     background-color: white;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;    
     align-items: center;
-    margin-top: -190px;
+    margin-top: -100px;
     margin-bottom: 250px;
 }
 
@@ -34,4 +34,29 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+@media(max-width: 767px){
+     #tagline-page{
+         padding-top:90px;
+        height: 40vh;
+        font-size: 8vw;
+        line-height: 7vw;
+     }
+
+     #button-container{
+      margin-top: -35px;
+      margin-bottom: 100px;
+     }
+}
+
+@media(min-width:767px ) and (max-width:1024px){
+     #tagline-page{
+        font-size: 6vw;
+        line-height: 5vw;
+     }
+
+     #button-container{
+      margin-top: -300px;
+     }
 }

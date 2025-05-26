@@ -1,19 +1,60 @@
-#page1{
+#ideas-page1{
     min-height: 50vh;
     width: 100%;
     color: black;
     background-color: white;
-    font-family: "Freight big pro";
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 4.2vw;
-    line-height: 3.5vw;
-    font-size: 100;
 }
 
-#page2{
-    min-height:100vh ;
+#ideas-page1 p {
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  color: black;
+  line-height: 1;
+  font-family: "Freight big pro";
+  font-weight: 100;
+  margin: 0;
+}
+
+#ideas-page2{
+    min-height:100vh;
     width: 100%;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+  #ideas-page1 p {
+    font-size: clamp(1.5rem, 8vw, 4rem);
+    font-weight: 300;
+  }
+
+  .cards-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    position: static;
+    height: 50vh;
+  }
+
+  #text-container {
+    width: 100%;
+  }
+
+  #text-container h1 {
+    line-height: 0.8;
+    margin-top: -1.5rem;
+  }
+
+  #text-container #training-image-models {
+    margin-top: -7rem;
+  }
+  
+  #text-container #furniture {
+    margin-top: -5rem;
+  }
+  
 }

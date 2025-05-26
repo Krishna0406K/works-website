@@ -36,11 +36,7 @@ function Footer() {
         </div>
         <div class="footer-bottom">
             <p>&copy; 2023 WORKS Studio. All rights reserved.</p>
-            <div class="bottom-links">
-                <a href="#HOME" onClick={() => navigate("/")}>Home</a>
-                <a href="#ABOUT" onClick={() => navigate("/about")}>About</a>
-                <a href="#IDEAS" onClick={() => navigate("/ideas")}>Ideas</a>
-            </div>
+
         </div>
     </footer>
 

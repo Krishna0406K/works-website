@@ -15,39 +15,75 @@
 
     function Ideas() {
 
-        useEffect(() => {
-        const cards = document.querySelectorAll('.card');
+       useEffect(() => {
+    const cards = document.querySelectorAll('.card');
 
-        cards.forEach((card) => {
+    cards.forEach((card) => {
         gsap.fromTo(
             card,
             { opacity: 0, y: 100 },
             {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-            },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse',
+                },
             }
         );
-        });
-    }, []);
+    });
+
+    ScrollTrigger.refresh();
+
+    const isMobile = window.innerWidth < 768;
+    cards.forEach((card) => {
+        gsap.fromTo(
+            card,
+            { opacity: 1, y: isMobile ? 50 : 100 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: isMobile ? 0.4 : 1.0,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse',
+                    immediateRender: false,
+                },
+            }
+        );
+    });
+
+    const handleResize = () => {
+        ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('orientationchange', handleResize);
+    };
+}, []);
+
+
         return (
             <div>
-                <div id='page1'>
+                <div id='ideas-page1' >
                     <p><em>Our space to</em> REFLECT, EXPRESS <em>and</em><br />
                         STRATEGIZE <em>with our</em> COMMUNITY.</p>
                 </div>
-                <div id='page2'>
-                    <div className='cards-container w-full text-white flex flex-col gap-5 items-center py-[10vh]'>
-                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-600' relative overflow-hidden >
+                <div id='ideas-page2'>
+                    <div className='cards-container w-full text-white flex flex-col gap-5 items-center'>
+                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-600 overflow-hidden'> 
                                 <video  className='absolute inset-0 w-full h-full object-cover z-[-1] opacity-40' src={vid1} autoPlay muted loop />
                                 <div id='text-container' className='relative z-10 '>
-                                    <h1 className='text-5xl font-helvetica leading-8 pt-20'>TRAINING IMAGE MODELS
+                                    <h1 id='training-image-models' className='text-5xl font-helvetica leading-8 pt-20'>TRAINING IMAGE MODELS
                                     <br />
                                     <em className='text-4xl font-freight leading-1'>StyleGAN Training with Perlin Noise</em></h1>
                                     <p className='text-xl font-helvetica leading-7 pt-10'>This is a study in the use of Perlin noise maps to train StyleGAN models. The goal is to explore the visual connections between noise maps and StyleGAN outputs, with an attempt to use one as an output for the other.
@@ -56,7 +92,7 @@
                                         Games with pro­ce­du­ral­ly generated content, including Minecraft, Terraria, and No Man’s Sky, generally use noise maps for their random terrain generation. ​“Perlin noise” is a type of map that has the capability to generate realistic 2D and 3D terrain through its pseudo-random nature. </p>
                                 </div>
                         </div>
-                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-700'>
+                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-700  overflow-hidden'>
                                 <video className='absolute inset-0 w-full h-full object-cover z-[-1] opacity-40' src={vid2} autoPlay muted loop />
                             <div id='text-container' className='relative z-10 '>
                                 <h1 className='text-5xl font-helvetica leading-8 pt-20'>GROWTH BY DESIGN<br /><em className='text-4xl font-freight leading-1'>Brand Strategy</em></h1>
@@ -68,18 +104,18 @@
                                 </p>
                             </div>
                         </div>
-                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-800'>
+                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-800  overflow-hidden'>
                             <div id='video-container'>
                                 <video src={vid3} className='absolute inset-0 w-full h-full object-cover z-[-1] opacity-40' autoPlay muted loop />
                             </div>
                             <div id='text-container'  className='relative z-10 '>
-                                <h1 className='text-4xl font-helvetica leading-8 pt-20'>FURNITURE AS AN ART OF PRATICE<br /><em className='text-4xl font-freight leading-1'>Product Design Exploration</em></h1>
+                                <h1 id='furniture' className='text-4xl font-helvetica leading-8 pt-20'>FURNITURE AS AN ART OF PRATICE<br /><em className='text-4xl font-freight leading-1'>Product Design Exploration</em></h1>
                                 <p className='text-xl font-helvetica leading-7 pt-10'>Over the last four years, WØRKS co-founder Haris Fazlani has been designing furniture. Not necessarily with overtly commercial intentions, but more as a meditative art practice that expands beyond our traditional working disciplines. ​“For me, feels like a natural extension of my fascination with sculpture, a way to create functional art that coun­ter­bal­ances the intan­gi­bil­i­ty of screen-based work,” he says.
 
                                     “There’s a profound comfort in making something tactile, analog, rooted in the physical world.” From the visual pre­car­i­ous­ness of the Italic Chair to the appre­ci­a­tion of shadows of the Level Workstation, each piece seeks to do convey the purity of a single artistic idea while remaining entirely functional. </p>
                             </div>
                         </div>
-                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-900'>
+                        <div className='card w-[95%] sticky top-[5vh] flex flex-col gap-5 px-[30px] py-[30vh] rounded-lg bg-slate-900 overflow-hidden'>
                             <div id='video-container'>
                                 <video src={vid4} className='absolute inset-0 w-full h-full object-cover z-[-1] opacity-40' autoPlay muted loop />
                             </div>

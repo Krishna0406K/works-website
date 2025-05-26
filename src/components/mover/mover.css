@@ -1,0 +1,52 @@
+
+
+ .movingg{
+    height: 40vh;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    top: 10%;
+    overflow: hidden;
+    display: flex;
+    transform: translateX(0);
+    justify-content: center;
+    text-align: center;
+     transition: all ease 0.3s;
+}
+
+ .movingg .movingg-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: movingg;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+ .movingg .movingg-in h5{
+    color: black;
+    display: inline-block;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-right: 40px;
+    transition: all ease 0.3s;
+    transition-delay: 0.2s;
+    opacity: 1;
+    overflow-x: auto;
+    font-size: 40vh;
+     text-shadow:
+        2px 2px 0 #555,
+        4px 4px 0 #333,
+        6px 6px 0 #111;
+}
+
+
+
+@keyframes movingg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
